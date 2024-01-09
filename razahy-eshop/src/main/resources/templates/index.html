@@ -24,9 +24,11 @@
 <section>
     <h2>Carousel of products</h2>
     <ul>
-        <li>Product 1</li>
-        <li>Product 2</li>
-        <li>Product 3</li>
+        <li th:each="product : ${products}">
+            <div th:text="'Name: ' + ${product.getName()}"></div>
+            <div th:text="'Description: ' + ${product.getDescription()}"></div>
+            <div th:text="'Price: ' + ${product.getPrice()} + ' Kč'"></div>
+        </li>
     </ul>
 </section>
 <section>
