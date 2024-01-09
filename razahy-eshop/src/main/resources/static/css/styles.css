@@ -1,0 +1,77 @@
+:root {
+    --off-white: #fafafa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*-------------------------------------------------------------------------*/
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+/*-------------------------------------------------------------------------*/
+
+.px-2 {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.py-1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+/*-------------------------------------------------------------------------*/
+
+.page-header {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 0;
+}
+
+.page-nav {
+    border-bottom: #000 solid 1px;
+    border-top: #000 solid 1px;
+}
+
+.page-carousel {
+    background-color: #dbe4ff;
+}
+
+.page-footer {
+    background: linear-gradient(180deg, rgba(9,146,104,1) 0%, rgba(10,137,98,1) 30%, rgba(15,153,111,1) 100%);
+    color: var(--off-white);
+}
+
+/*-------------------------------------------------------------------------*/
+
+.nav-list {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-list li {
+    padding: 0.25rem 0.5rem;
+    border-left: #000 solid 1px;
+    border-right: #000 solid 1px;
+}
+
+.carousel-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.carousel-list li {
+    min-width: 18rem;
+    background-color: #edf2ff;
+}

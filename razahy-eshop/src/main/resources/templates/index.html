@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Razahy</title>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<header>
-    <h1>Razahy eshop</h1>
+<header class="page-header">
+    <h1>Razahy</h1>
 </header>
-<nav>
-    <ul>
+<nav class="page-nav px-2">
+    <ul class="nav-list">
         <li>Category 1</li>
         <li>Category 2</li>
         <li>Category 3</li>
@@ -17,13 +18,13 @@
         <li>Category 5</li>
     </ul>
 </nav>
-<section>
+<section class="page-intro px-2 py-1">
     <h2>Logo</h2>
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc vitae massa.</p>
 </section>
-<section>
+<section class="page-carousel px-2 py-1">
     <h2>Carousel of products</h2>
-    <ul>
+    <ul class="carousel-list">
         <li th:each="product : ${products}">
             <div th:text="'Name: ' + ${product.getName()}"></div>
             <div th:text="'Description: ' + ${product.getDescription()}"></div>
@@ -31,12 +32,12 @@
         </li>
     </ul>
 </section>
-<section>
+<section class="page-about-us px-2 py-1">
     <h2>About us</h2>
     <p>Maecenas libero. In rutrum. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo
         minus id quod.</p>
 </section>
-<footer>
+<footer class="page-footer px-2 py-1">
     <div>
         <h3>Logo</h3>
         <span>© 2023 BariekR</span>
