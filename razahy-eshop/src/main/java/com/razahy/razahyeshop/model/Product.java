@@ -29,4 +29,11 @@ public class Product {
         this.description = description;
         this.price = price;
     }
+
+    public String getCategoryName() {
+        if (category == null || category.getName() == null) {
+            return "n/a";
+        }
+        return category.getName();
+    }
 }

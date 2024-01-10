@@ -41,8 +41,7 @@ li {
 }
 
 .page-nav {
-    border-bottom: #000 solid 1px;
-    border-top: #000 solid 1px;
+
 }
 
 .page-carousel {
@@ -59,12 +58,13 @@ li {
 .nav-list {
     display: flex;
     gap: 2rem;
+    flex-wrap: wrap;
 }
 
 .nav-list li {
     padding: 0.25rem 0.5rem;
-    border-left: #000 solid 1px;
-    border-right: #000 solid 1px;
+    border: #000 solid 1px;
+    border-radius: 0.25rem;
     min-width: 10rem;
 }
 

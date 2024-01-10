@@ -9,6 +9,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Random;
 
 @Component
 @AllArgsConstructor
@@ -22,6 +23,7 @@ public class DataLoader implements CommandLineRunner {
     public void run(String... args) throws Exception {
         List<Product> products = createAndSaveProducts(100, 100, 10000);
         List<Category> categories = createAndSaveCategories(10);
+        assignRandomCategoryToProductAndSave(products, categories);
     }
 
     private List<Product> createAndSaveProducts(int numberOfProducts,
@@ -35,5 +37,14 @@ public class DataLoader implements CommandLineRunner {
     private List<Category> createAndSaveCategories(int numberOfCategories) {
         List<Category> newCategories = categoryFactory.createCategories(numberOfCategories);
         return categoryService.saveCategories(newCategories);
+    }
+
+    private void assignRandomCategoryToProductAndSave(List<Product> products, List<Category> categories) {
+        Random rand = new Random();
+
+        for (int i = 0; i < products.size(); i++) {
+            products.get(i).setCategory(categories.get(rand.nextInt(0, categories.size())));
+        }
+        productService.saveProducts(products);
     }
 }
