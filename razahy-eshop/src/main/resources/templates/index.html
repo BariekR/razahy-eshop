@@ -13,7 +13,7 @@
 <nav class="page-nav px-2">
     <ul class="nav-list">
         <li th:each="category : ${categories}">
-            <a th:href="@{/products/__${category.getId()}__}" th:text="${category.getName()}" class="anchor d-block nav-list-anchor"></a>
+            <a th:href="@{/categories/__${category.getId()}__}" th:text="${category.getName()}" class="anchor d-block nav-list-anchor"></a>
         </li>
     </ul>
 </nav>
@@ -33,7 +33,7 @@
     </ul>
     <ul class="pagination-list">
         <li th:each="page : ${pages}">
-            <a th:href="@{/}" th:text="${page}" class="anchor"></a>
+            <a th:href="@{/(page=${page})}" th:text="${page}" class="anchor"></a>
         </li>
     </ul>
 </section>
