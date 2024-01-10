@@ -2,6 +2,7 @@
 
 :root {
     --off-white: #fafafa;
+    --off-black: #343a40;
     --black: #000000;
     --anchor: #364fc7;
 }
@@ -72,7 +73,7 @@ li {
 }
 
 .nav-list li {
-    border: #000 solid 1px;
+    border: var(--anchor) solid 1px;
     border-radius: 0.25rem;
     min-width: 10rem;
 }
@@ -99,7 +100,13 @@ li {
 /*-------------------------------------------------------------------------*/
 
 .nav-list-anchor {
+    color: var(--anchor);
     padding: 0.25rem 0.5rem;
+    text-decoration: none;
+}
+
+.nav-list-anchor:hover, .nav-list-anchor:active {
+    box-shadow: 0 0 4px rgba(54, 79, 199, 1);
 }
 
 .anchor {

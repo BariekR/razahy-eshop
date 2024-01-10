@@ -13,7 +13,7 @@
 <nav class="page-nav px-2">
     <ul class="nav-list">
         <li th:each="category : ${categories}">
-            <a th:href="@{/categories/__${category.getId()}__}" th:text="${category.getName()}" class="anchor d-block nav-list-anchor"></a>
+            <a th:href="@{/categories/__${category.getId()}__}" th:text="${category.getName()}" class="d-block nav-list-anchor"></a>
         </li>
     </ul>
 </nav>
@@ -22,7 +22,7 @@
     <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nunc vitae massa.</p>
 </section>
 <section class="page-carousel px-2 py-1">
-    <h2>Carousel of products</h2>
+    <h2>Products</h2>
     <ul class="carousel-list">
         <li th:each="product : ${products}">
             <div th:text="'Name: ' + ${product.getName()}"></div>
