@@ -8,6 +8,8 @@ import java.util.List;
 @Service
 public interface ProductService {
     List<Product> getAllProducts();
+    List<Product> getProductsByCategoryId(Long id);
     Product saveProduct(Product product);
     List<Product> saveProducts(List<Product> products);
+    long countAllProducts();
 }

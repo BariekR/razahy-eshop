@@ -3,6 +3,7 @@ package com.razahy.razahyeshop.service;
 import com.razahy.razahyeshop.model.Product;
 import com.razahy.razahyeshop.repository.ProductRepository;
 import lombok.AllArgsConstructor;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,7 +15,13 @@ public class ProductServiceDb implements ProductService {
 
     @Override
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        productRepository.count();
+        return productRepository.findAll(PageRequest.of(0, 15)).toList();
+    }
+
+    @Override
+    public List<Product> getProductsByCategoryId(Long id) {
+        return productRepository.findAllByCategory_Id(id);
     }
 
     @Override
@@ -25,5 +32,10 @@ public class ProductServiceDb implements ProductService {
     @Override
     public List<Product> saveProducts(List<Product> products) {
         return productRepository.saveAll(products);
+    }
+
+    @Override
+    public long countAllProducts() {
+        return productRepository.count();
     }
 }
