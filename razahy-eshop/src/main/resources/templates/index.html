@@ -11,11 +11,7 @@
 </header>
 <nav class="page-nav px-2">
     <ul class="nav-list">
-        <li>Category 1</li>
-        <li>Category 2</li>
-        <li>Category 3</li>
-        <li>Category 4</li>
-        <li>Category 5</li>
+        <li th:each="category : ${categories}" th:text="${category.getName()}"></li>
     </ul>
 </nav>
 <section class="page-intro px-2 py-1">

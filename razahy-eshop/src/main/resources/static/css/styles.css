@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sono:wght@400;600;700&display=swap');
+
 :root {
     --off-white: #fafafa;
 }
@@ -11,7 +13,7 @@
 /*-------------------------------------------------------------------------*/
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
 }
 
 li {
@@ -48,7 +50,7 @@ li {
 }
 
 .page-footer {
-    background: linear-gradient(180deg, rgba(9,146,104,1) 0%, rgba(10,137,98,1) 30%, rgba(15,153,111,1) 100%);
+    background: linear-gradient(180deg, rgba(9, 146, 104, 1) 0%, rgba(10, 137, 98, 1) 30%, rgba(15, 153, 111, 1) 100%);
     color: var(--off-white);
 }
 
@@ -63,6 +65,7 @@ li {
     padding: 0.25rem 0.5rem;
     border-left: #000 solid 1px;
     border-right: #000 solid 1px;
+    min-width: 10rem;
 }
 
 .carousel-list {
@@ -74,4 +77,6 @@ li {
 .carousel-list li {
     min-width: 18rem;
     background-color: #edf2ff;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }
