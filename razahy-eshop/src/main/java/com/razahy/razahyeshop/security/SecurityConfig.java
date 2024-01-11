@@ -2,6 +2,7 @@ package com.razahy.razahyeshop.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.User;
@@ -31,11 +32,23 @@ public class SecurityConfig {
     }
 
     @Bean
+    public UserDetailsService userDetailsService() {
+        return new InMemoryUserDetailsManager();
+    }
+
+    @Bean
+    public DaoAuthenticationProvider authenticationProvider() {
+        DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider(passwordEncoder());
+        authProvider.setUserDetailsService(userDetailsService());
+        return authProvider;
+    }
+
+    /*@Bean
     public InMemoryUserDetailsManager userDetailsService() {
         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
         UserDetails user = User.withUsername("Razahy").password(encoder.encode("1234")).authorities("user").build();
         return new InMemoryUserDetailsManager(user);
-    }
+    }*/
 
     /*@Bean
     public UserDetailsService userDetailsService(DataSource dataSource) {
