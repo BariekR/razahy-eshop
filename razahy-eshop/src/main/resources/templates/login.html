@@ -10,7 +10,7 @@
         <div class="container-login-header">
             <h1 class="login-header text-center" th:text="${loginHeader}"></h1>
         </div>
-        <form th:method="POST" th:action="@{/login}" class="form-login">
+        <form th:method="POST" th:action="@{${loginProcessUrl}}" class="form-login">
             <div class="form-field mb-1">
                 <label for="email" class="form-label">E-mail</label>
                 <input type="email" name="username" id="email" autofocus class="form-input-text">

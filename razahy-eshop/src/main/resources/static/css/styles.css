@@ -202,7 +202,7 @@ li {
 .form-input-text {
     padding: 0.25rem 1rem;
     font-size: 1rem;
-    border-bottom: 3px solid var(--off-black);
+    border-bottom: 3px solid #868e96;
     border-top: 1px solid var(--off-black);
     border-left: 1px solid var(--off-black);
     border-right: 1px solid var(--off-black);

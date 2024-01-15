@@ -3,6 +3,8 @@ package com.razahy.razahyeshop.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Optional;
 
@@ -27,6 +29,7 @@ public class AccountController {
         model.addAttribute("loginButton", LOGIN_BUTTON);
         model.addAttribute("loginFooterAnchor", REGISTER_ENDPOINT);
         model.addAttribute("loginFooterAnchorText", LOGIN_FOOTER_TEXT);
+        model.addAttribute("loginProcessUrl", LOGIN_ENDPOINT);
         return "login";
     }
 
@@ -36,6 +39,13 @@ public class AccountController {
         model.addAttribute("loginButton", REGISTER_BUTTON);
         model.addAttribute("loginFooterAnchor", LOGIN_ENDPOINT);
         model.addAttribute("loginFooterAnchorText", REGISTER_FOOTER_TEXT);
+        model.addAttribute("loginProcessUrl", REGISTER_ENDPOINT);
         return "login";
+    }
+
+    @PostMapping(REGISTER_ENDPOINT)
+    @ResponseBody
+    public String postRegister() {
+        return "registered";
     }
 }
