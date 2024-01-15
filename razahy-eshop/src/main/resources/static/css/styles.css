@@ -183,6 +183,13 @@ li {
     font-weight: 500;
 }
 
+.login-footer {
+    margin-top: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
+    text-align: center;
+}
+
 .form-login {
     padding: 1rem 2rem 2rem 2rem;
 }
@@ -201,11 +208,11 @@ li {
     border-right: 1px solid var(--off-black);
     height: 3rem;
     outline: none;
-    cursor: pointer;
+    cursor: text;
 }
 
 .form-input-text:focus {
-    border-bottom: 3px solid var(--green);
+    border-bottom-color: var(--green);
 }
 
 .form-label {
@@ -222,6 +229,7 @@ li {
     padding: 0.8rem 2.5rem;
     letter-spacing: 0.05rem;
     text-align: center;
+    text-transform: uppercase;
     background-size: 200% auto;
     transition: 0.5s;
     color: white;
@@ -235,6 +243,7 @@ li {
 
 .btn-grad:focus {
     outline: 3px solid #c3cfe2;
+    transition: none;
 }
 
 .login-error {
