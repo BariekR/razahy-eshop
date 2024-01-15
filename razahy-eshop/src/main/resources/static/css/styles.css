@@ -5,6 +5,7 @@
     --off-black: #343a40;
     --black: #000000;
     --anchor: #364fc7;
+    --green: #099268;
 }
 
 * {
@@ -15,11 +16,8 @@
 
 /*-------------------------------------------------------------------------*/
 
-body {
+.body-general {
     font-family: 'Inter', 'Segoe UI', sans-serif;
-    scrollbar-gutter: stable both-edges;
-    overflow-x: hidden;
-    width: 100vw;
 }
 
 li {
@@ -32,9 +30,18 @@ li {
     display: block;
 }
 
+.text-center {
+    text-align: center;
+}
+
 .px-2 {
     padding-left: 2rem;
     padding-right: 2rem;
+}
+
+.px-05 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 .py-1 {
@@ -42,7 +49,22 @@ li {
     padding-bottom: 1rem;
 }
 
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
 /*-------------------------------------------------------------------------*/
+
+.body-index {
+    scrollbar-gutter: stable both-edges;
+    overflow-x: hidden;
+    width: 100vw;
+    min-height: 100vh;
+}
 
 .page-header {
     display: flex;
@@ -124,4 +146,99 @@ li {
 .anchor-header {
     text-decoration: none;
     color: var(--black);
+}
+
+/*-------------------------------------------------------------------------*/
+
+.body-login {
+    background-image: linear-gradient(to bottom, #f5f7fa 0%, #c3cfe2 100%);
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    padding-top: 5rem;
+}
+
+.container-login {
+    margin: 0 auto;
+    max-width: 30rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 25px 0 rgba(0, 0, 0, 0.2);
+    background-color: var(--off-white);
+    overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {
+    .container-login {
+        width: 80%;
+    }
+}
+
+.container-login-header {
+    background-image: linear-gradient(to bottom, #f5f7fa 0%, rgba(195, 207, 226, 0.15) 100%);
+    background-repeat: no-repeat;
+    padding: 1.5rem 0;
+}
+
+.login-header {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+.form-login {
+    padding: 1rem 2rem 2rem 2rem;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input-text {
+    padding: 0.25rem 1rem;
+    font-size: 1rem;
+    border-bottom: 3px solid var(--off-black);
+    border-top: 1px solid var(--off-black);
+    border-left: 1px solid var(--off-black);
+    border-right: 1px solid var(--off-black);
+    height: 3rem;
+    outline: none;
+    cursor: pointer;
+}
+
+.form-input-text:focus {
+    border-bottom: 3px solid var(--green);
+}
+
+.form-label {
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.btn-grad {
+    background-image: linear-gradient(to right, rgba(9, 146, 104, 1) 0%, rgba(10, 137, 98, 1) 30%, rgba(15, 153, 111, 1) 100%);
+    border: 0;
+    border-radius: 0.5rem;
+    padding: 0.8rem 2.5rem;
+    letter-spacing: 0.05rem;
+    text-align: center;
+    background-size: 200% auto;
+    transition: 0.5s;
+    color: white;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+}
+
+.btn-grad:focus {
+    outline: 3px solid #c3cfe2;
+}
+
+.login-error {
+    display: block;
+    color: #c92a2a;
+    margin-bottom: 0.5rem;
 }

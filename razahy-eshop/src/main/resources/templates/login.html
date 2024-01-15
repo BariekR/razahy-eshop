@@ -5,17 +5,23 @@
     <title>Login</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
-<body>
-    <form th:method="POST" th:action="@{/login}">
-        <div>
-            <label for="email">E-mail</label>
-            <input type="email" name="username" id="email">
+<body class="body-general body-login">
+    <section class="container-login">
+        <div class="container-login-header">
+            <h1 class="login-header text-center">Already have an account? Log in</h1>
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password">
-        </div>
-        <button type="submit">Sign in</button>
-    </form>
+        <form th:method="POST" th:action="@{/login}" class="form-login">
+            <div class="form-field mb-1">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" name="username" id="email" autofocus class="form-input-text">
+            </div>
+            <div class="form-field mb-1">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" id="password" class="form-input-text">
+            </div>
+            <span th:if="${error}" th:text="${error}" class="login-error"></span>
+            <button type="submit" class="btn-grad">SIGN IN</button>
+        </form>
+    </section>
 </body>
 </html>
