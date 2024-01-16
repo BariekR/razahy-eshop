@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Razahy | Login</title>
+    <title>Razahy | Account</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body class="body-general body-login">
@@ -13,13 +13,16 @@
         <form th:method="POST" th:action="@{${loginProcessUrl}}" class="form-login">
             <div class="form-field mb-1">
                 <label for="email" class="form-label">E-mail</label>
-                <input type="email" name="username" id="email" autofocus class="form-input-text">
+                <input type="email" name="username" id="email" autofocus class="form-input-text" th:value="${username}">
             </div>
             <div class="form-field mb-1">
                 <label for="password" class="form-label">Password</label>
                 <input type="password" name="password" id="password" class="form-input-text">
             </div>
             <span th:if="${error}" th:text="${error}" class="login-error"></span>
+            <span th:if="${emailNotValidError}" th:text="${emailNotValidError}" class="login-error"></span>
+            <span th:if="${passwordNotValidError}" th:text="${passwordNotValidError}" class="login-error"></span>
+            <span th:if="${customerAlreadyExistsError}" th:text="${customerAlreadyExistsError}" class="login-error"></span>
             <button type="submit" class="btn-grad" th:text="${loginButton}"></button>
         </form>
     </section>
